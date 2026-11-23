@@ -1,0 +1,648 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Nexa AI Labs | Bots de WhatsApp con inteligencia artificial</title>
+  <meta name="description" content="Tu negocio atiende y vende por WhatsApp las 24 horas. Creamos bots de WhatsApp con inteligencia artificial, hechos a medida, que atienden como una persona.">
+  <meta name="theme-color" content="#060b1a">
+  <link rel="canonical" href="https://nexaailabs22-del.github.io/">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+
+  <!-- Vista previa al compartir (WhatsApp, Facebook, Instagram) -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Nexa AI Labs">
+  <meta property="og:locale" content="es_LA">
+  <meta property="og:url" content="https://nexaailabs22-del.github.io/">
+  <meta property="og:title" content="Nexa AI Labs | Tu negocio atiende y vende por WhatsApp las 24 horas">
+  <meta property="og:description" content="Bots de WhatsApp con inteligencia artificial, hechos a medida para tu negocio. Pide tu demo gratis.">
+  <meta property="og:image" content="https://nexaailabs22-del.github.io/logo.png">
+  <meta property="og:image:alt" content="Logo de Nexa AI Labs">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nexa AI Labs | Tu negocio atiende y vende por WhatsApp las 24 horas">
+  <meta name="twitter:description" content="Bots de WhatsApp con inteligencia artificial, hechos a medida para tu negocio.">
+  <meta name="twitter:image" content="https://nexaailabs22-del.github.io/logo.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#060b1a;
+      --bg-2:#0a1430;
+      --card:#0e1a3a;
+      --card-2:#12224a;
+      --line:rgba(94,234,240,.14);
+      --text:#e8f1ff;
+      --muted:#9fb1d1;
+      --cyan:#22d3ee;
+      --teal:#2dd4bf;
+      --grad:linear-gradient(135deg,#22d3ee 0%,#2dd4bf 100%);
+      --wa:#25d366;
+      --radius:18px;
+      --max:1120px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+    body{
+      font-family:Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.6;
+      overflow-x:hidden;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .wrap{width:100%;max-width:var(--max);margin:0 auto;padding:0 20px}
+    section{padding:72px 0;position:relative}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      font-size:.78rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+      color:var(--cyan);margin-bottom:12px;
+    }
+    h1,h2,h3{line-height:1.2;letter-spacing:-.02em}
+    h2{font-size:clamp(1.6rem,5.5vw,2.4rem);margin-bottom:14px}
+    .lead{color:var(--muted);font-size:1.05rem;max-width:640px}
+    .center{text-align:center}
+    .center .lead{margin:0 auto}
+    .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+
+    /* Botones */
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:15px 26px;border-radius:999px;font-weight:700;font-size:1rem;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+      cursor:pointer;border:0;min-height:52px;
+    }
+    .btn svg{width:22px;height:22px;flex-shrink:0}
+    .btn-primary{background:var(--grad);color:#04121c;box-shadow:0 10px 30px -8px rgba(34,211,238,.55)}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 14px 36px -8px rgba(34,211,238,.7)}
+    .btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.03)}
+    .btn-ghost:hover{border-color:var(--cyan);color:var(--cyan)}
+    .btn-wa{background:var(--wa);color:#05210f;box-shadow:0 10px 30px -10px rgba(37,211,102,.6)}
+    .btn-wa:hover{transform:translateY(-2px)}
+    .btn-sm{padding:11px 18px;min-height:44px;font-size:.92rem}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(6,11,26,.75);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+    .brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem}
+    .logo-slot{
+      width:38px;height:38px;border-radius:10px;overflow:hidden;flex-shrink:0;
+      display:grid;place-items:center;background:var(--card);border:1px solid var(--line);
+    }
+    .logo-slot img{width:100%;height:100%;object-fit:contain}
+    .logo-slot .fallback{font-weight:800;font-size:1rem;color:var(--cyan)}
+    .nav-links{display:none;gap:26px;color:var(--muted);font-size:.93rem;font-weight:500}
+    .nav-links a:hover{color:var(--cyan)}
+    @media(min-width:900px){.nav-links{display:flex}}
+
+    /* Hero */
+    .hero{padding:56px 0 80px;overflow:hidden}
+    .hero::before{
+      content:"";position:absolute;inset:-20% -30% auto -30%;height:120%;
+      background:
+        radial-gradient(40% 40% at 70% 20%,rgba(34,211,238,.22),transparent 70%),
+        radial-gradient(35% 35% at 15% 60%,rgba(45,212,191,.14),transparent 70%);
+      pointer-events:none;animation:glow 12s ease-in-out infinite alternate;
+    }
+    @keyframes glow{to{transform:translate3d(0,-30px,0) scale(1.05)}}
+    .hero-grid{display:grid;gap:48px;align-items:center;position:relative}
+    @media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr}}
+    .hero-logo{width:88px;height:88px;border-radius:22px;margin-bottom:22px}
+    .hero-logo .fallback{font-size:2rem}
+    .hero h1{font-size:clamp(2rem,8.2vw,3.5rem);font-weight:800;margin-bottom:18px}
+    .hero .lead{font-size:1.1rem;margin-bottom:28px}
+    .hero-cta{display:flex;flex-wrap:wrap;gap:12px}
+    .hero-cta .btn{flex:1 1 auto}
+    @media(min-width:520px){.hero-cta .btn{flex:0 0 auto}}
+    .trust{display:flex;flex-wrap:wrap;gap:10px 20px;margin-top:26px;color:var(--muted);font-size:.9rem}
+    .trust span{display:inline-flex;align-items:center;gap:7px}
+    .trust svg{width:17px;height:17px;color:var(--teal)}
+
+    /* Mockup de chat */
+    .phone{
+      width:100%;max-width:340px;margin:0 auto;
+      background:linear-gradient(180deg,#0c1834,#0a1228);
+      border:1px solid var(--line);border-radius:30px;padding:16px;
+      box-shadow:0 30px 80px -20px rgba(34,211,238,.25);
+      animation:float 6s ease-in-out infinite;
+    }
+    @keyframes float{50%{transform:translateY(-10px)}}
+    .chat-head{display:flex;align-items:center;gap:10px;padding:4px 6px 14px;border-bottom:1px solid var(--line);margin-bottom:14px}
+    .chat-head .avatar{width:36px;height:36px;border-radius:50%;background:var(--grad);display:grid;place-items:center;color:#04121c}
+    .chat-head .avatar svg{width:20px;height:20px}
+    .chat-head b{display:block;font-size:.92rem}
+    .chat-head small{color:var(--teal);font-size:.75rem}
+    .msgs{display:flex;flex-direction:column;gap:9px;min-height:300px}
+    .msg{
+      max-width:82%;padding:9px 13px;border-radius:14px;font-size:.88rem;line-height:1.45;
+      opacity:0;transform:translateY(8px);animation:pop .5s ease forwards;
+    }
+    .msg.in{align-self:flex-start;background:var(--card-2);border-bottom-left-radius:4px}
+    .msg.out{align-self:flex-end;background:#0f5d5a;border-bottom-right-radius:4px}
+    .msg:nth-child(1){animation-delay:.4s}
+    .msg:nth-child(2){animation-delay:1.3s}
+    .msg:nth-child(3){animation-delay:2.3s}
+    .msg:nth-child(4){animation-delay:3.3s}
+    .msg:nth-child(5){animation-delay:4.3s}
+    .msg .time{display:block;text-align:right;font-size:.68rem;color:var(--muted);margin-top:2px}
+    @keyframes pop{to{opacity:1;transform:none}}
+
+    /* Tarjetas */
+    .cards{display:grid;gap:16px;margin-top:36px}
+    @media(min-width:640px){.cards.c2{grid-template-columns:repeat(2,1fr)}}
+    @media(min-width:900px){.cards.c4{grid-template-columns:repeat(4,1fr)}.cards.c3{grid-template-columns:repeat(3,1fr)}}
+    @media(min-width:640px) and (max-width:899px){.cards.c4{grid-template-columns:repeat(2,1fr)}}
+    .card{
+      background:linear-gradient(180deg,var(--card),rgba(14,26,58,.6));
+      border:1px solid var(--line);border-radius:var(--radius);padding:24px;
+      transition:transform .25s ease,border-color .25s ease;
+    }
+    .card:hover{transform:translateY(-4px);border-color:rgba(34,211,238,.4)}
+    .icon{
+      width:50px;height:50px;border-radius:14px;display:grid;place-items:center;margin-bottom:16px;
+      background:rgba(34,211,238,.1);color:var(--cyan);border:1px solid rgba(34,211,238,.25);
+    }
+    .icon svg{width:26px;height:26px}
+    .card h3{font-size:1.12rem;margin-bottom:8px}
+    .card p{color:var(--muted);font-size:.95rem}
+
+    /* Quiénes somos */
+    .about{background:linear-gradient(180deg,transparent,var(--bg-2) 40%,transparent)}
+    .about-grid{display:grid;gap:28px;align-items:center}
+    @media(min-width:900px){.about-grid{grid-template-columns:1fr 1fr;gap:56px}}
+    .about-points{display:grid;gap:14px}
+    .point{display:flex;gap:14px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px}
+    .point .icon{width:42px;height:42px;margin:0;flex-shrink:0;border-radius:12px}
+    .point .icon svg{width:22px;height:22px}
+    .point b{display:block;margin-bottom:2px}
+    .point span{color:var(--muted);font-size:.93rem}
+
+    /* Rubros */
+    .rubro{display:flex;flex-direction:column}
+    .rubro ul{list-style:none;margin:14px 0 22px;display:grid;gap:8px;color:var(--muted);font-size:.93rem}
+    .rubro li{display:flex;gap:9px;align-items:flex-start}
+    .rubro li svg{width:18px;height:18px;color:var(--teal);flex-shrink:0;margin-top:3px}
+    .rubro .btn{margin-top:auto;width:100%}
+
+    /* Pasos */
+    .steps{display:grid;gap:16px;margin-top:36px;counter-reset:s}
+    @media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+    .step{position:relative;padding:26px 24px 24px;border-radius:var(--radius);border:1px solid var(--line);background:var(--card)}
+    .step .num{
+      width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font-weight:800;
+      background:var(--grad);color:#04121c;margin-bottom:14px;
+    }
+    .step h3{font-size:1.1rem;margin-bottom:6px}
+    .step p{color:var(--muted);font-size:.95rem}
+
+    /* Demos */
+    .demo-box{
+      margin-top:36px;border-radius:24px;padding:28px 22px;
+      background:radial-gradient(120% 120% at 100% 0%,rgba(34,211,238,.16),transparent 60%),var(--card);
+      border:1px solid rgba(34,211,238,.3);
+    }
+    .demo-list{display:grid;gap:12px;margin-top:22px}
+    @media(min-width:760px){.demo-list{grid-template-columns:repeat(3,1fr)}}
+    .demo-item{
+      display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;
+      background:rgba(6,11,26,.6);border:1px solid var(--line);
+      transition:border-color .2s ease,transform .2s ease;
+    }
+    .demo-item:hover{border-color:var(--wa);transform:translateY(-2px)}
+    .demo-item .icon{margin:0;width:46px;height:46px;flex-shrink:0;background:rgba(37,211,102,.12);color:var(--wa);border-color:rgba(37,211,102,.3)}
+    .demo-item b{display:block}
+    .demo-item small{color:var(--muted)}
+    .demo-item .go{margin-left:auto;color:var(--muted)}
+    .demo-item .go svg{width:20px;height:20px}
+    .store-link{
+      margin-top:14px;display:flex;align-items:center;gap:14px;padding:16px;border-radius:16px;
+      border:1px dashed rgba(34,211,238,.4);transition:background .2s ease;
+    }
+    .store-link:hover{background:rgba(34,211,238,.06)}
+    .store-link .icon{margin:0;width:46px;height:46px;flex-shrink:0}
+    .store-link small{color:var(--muted);display:block}
+    .store-link .go{margin-left:auto;color:var(--cyan)}
+    .store-link .go svg{width:20px;height:20px}
+
+    /* FAQ */
+    .faq{max-width:760px;margin:36px auto 0;display:grid;gap:12px}
+    details{background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:border-color .2s ease}
+    details[open]{border-color:rgba(34,211,238,.4)}
+    summary{
+      list-style:none;cursor:pointer;padding:18px 20px;font-weight:600;
+      display:flex;justify-content:space-between;align-items:center;gap:16px;
+    }
+    summary::-webkit-details-marker{display:none}
+    summary .plus{width:26px;height:26px;flex-shrink:0;border-radius:50%;display:grid;place-items:center;background:rgba(34,211,238,.1);color:var(--cyan);transition:transform .25s ease}
+    summary .plus svg{width:16px;height:16px}
+    details[open] summary .plus{transform:rotate(45deg)}
+    details p{padding:0 20px 20px;color:var(--muted)}
+
+    /* CTA final */
+    .final{
+      text-align:center;border-radius:28px;padding:48px 22px;
+      background:radial-gradient(80% 120% at 50% 0%,rgba(34,211,238,.2),transparent 70%),var(--bg-2);
+      border:1px solid rgba(34,211,238,.3);
+    }
+    .final h2{margin-bottom:10px}
+    .final .lead{margin:0 auto 26px}
+
+    /* Footer */
+    footer{border-top:1px solid var(--line);padding:40px 0 110px;color:var(--muted);font-size:.92rem}
+    .foot{display:grid;gap:24px;align-items:center}
+    @media(min-width:760px){.foot{grid-template-columns:1fr auto auto}}
+    .socials{display:flex;gap:12px}
+    .socials a{
+      width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
+      border:1px solid var(--line);background:var(--card);color:var(--text);transition:color .2s,border-color .2s;
+    }
+    .socials a:hover{color:var(--cyan);border-color:var(--cyan)}
+    .socials svg{width:22px;height:22px}
+    .copy{margin-top:26px;font-size:.82rem;opacity:.75}
+
+    /* Botón flotante */
+    .wa-float{
+      position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom));z-index:60;
+      width:62px;height:62px;border-radius:50%;background:var(--wa);color:#fff;
+      display:grid;place-items:center;box-shadow:0 12px 30px -6px rgba(37,211,102,.6);
+      transition:transform .2s ease;
+    }
+    .wa-float:hover{transform:scale(1.07)}
+    .wa-float svg{width:34px;height:34px}
+    .wa-float::after{
+      content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--wa);
+      animation:ring 2.4s ease-out infinite;
+    }
+    @keyframes ring{from{transform:scale(1);opacity:.8}to{transform:scale(1.6);opacity:0}}
+
+    /* Animación de aparición */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+    .reveal.in{opacity:1;transform:none}
+    @media (prefers-reduced-motion: reduce){
+      *,*::before,*::after{animation:none!important;transition:none!important}
+      .reveal{opacity:1;transform:none}
+      .msg{opacity:1;transform:none}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Íconos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.64.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.6-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.19 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.17-1.41-.07-.13-.27-.2-.57-.35M12.05 21.5h-.01a9.4 9.4 0 0 1-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.43 9.43 0 0 1-1.44-5.02c0-5.2 4.24-9.44 9.45-9.44a9.4 9.4 0 0 1 6.68 2.77 9.38 9.38 0 0 1 2.76 6.68c0 5.21-4.24 9.44-9.45 9.44m8.04-17.48A11.3 11.3 0 0 0 12.05.7C5.78.7.68 5.8.68 12.06c0 2 .52 3.96 1.52 5.68L.58 23.62l6.02-1.58a11.3 11.3 0 0 0 5.44 1.39h.01c6.26 0 11.36-5.1 11.37-11.36 0-3.04-1.18-5.89-3.33-8.04"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-ext" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M14 4h6v6M20 4l-9 9M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/></symbol>
+      <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+      <symbol id="i-cart" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="20" r="1.4"/><circle cx="18" cy="20" r="1.4"/><path d="M2.5 3.5h2.6l2.4 11.2a1.5 1.5 0 0 0 1.5 1.2h8.6a1.5 1.5 0 0 0 1.5-1.1L21 8H6"/></g></symbol>
+      <symbol id="i-coin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M15 9.2c-.5-.9-1.6-1.4-3-1.4-1.8 0-3 .9-3 2.1 0 2.9 6 1.5 6 4.3 0 1.2-1.2 2.1-3 2.1-1.4 0-2.6-.6-3.1-1.6M12 6v1.8M12 16.3V18"/></g></symbol>
+      <symbol id="i-bell" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15z"/><path d="M10 21h4"/></g></symbol>
+      <symbol id="i-food" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 3 20h18z"/><circle cx="10" cy="14" r="1.2"/><circle cx="14" cy="16" r="1.2"/><circle cx="12.5" cy="10.5" r="1"/></g></symbol>
+      <symbol id="i-store" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5V20h16V9.5"/><path d="M3 9.5 5 4h14l2 5.5a2.6 2.6 0 0 1-4.5 1.6 2.6 2.6 0 0 1-4.5 0 2.6 2.6 0 0 1-4.5 0A2.6 2.6 0 0 1 3 9.5z"/><path d="M10 20v-5h4v5"/></g></symbol>
+      <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="2"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></g></symbol>
+      <symbol id="i-bot" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8" width="16" height="12" rx="3"/><path d="M12 4v4M9 13.5v1M15 13.5v1M2 13v3M22 13v3"/><circle cx="12" cy="3.5" r="1"/></g></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3z"/></g></symbol>
+      <symbol id="i-tool" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0 5 5L21 12.6 12.6 21a2.1 2.1 0 0 1-3-3L18 9.6"/><path d="M14.7 6.3 9.4 1.1 6 4.5l5.2 5.3"/></g></symbol>
+      <symbol id="i-chat" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.4-5A8 8 0 1 1 21 12z"/><path d="M8.5 11h.01M12 11h.01M15.5 11h.01"/></g></symbol>
+      <symbol id="i-video" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="6" width="13" height="12" rx="2"/><path d="m15.5 10.5 6-3.5v10l-6-3.5"/></g></symbol>
+      <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></g></symbol>
+      <symbol id="i-fb" viewBox="0 0 24 24"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.9 1.4-3.9 4v2.2H7.8v3h2.6V21z"/></symbol>
+    </defs>
+  </svg>
+
+  <header>
+    <div class="wrap nav">
+      <a href="#inicio" class="brand" aria-label="Nexa AI Labs, ir al inicio">
+        <span class="logo-slot"><img src="logo.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'N'}))"></span>
+        Nexa AI Labs
+      </a>
+      <nav class="nav-links" aria-label="Secciones">
+        <a href="#beneficios">Beneficios</a>
+        <a href="#rubros">Rubros</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#demos">Demos</a>
+        <a href="#preguntas">Preguntas</a>
+      </nav>
+      <a class="btn btn-primary btn-sm" data-wa="Hola, vengo de la página de Nexa AI Labs y quiero ver una demo" href="#">Quiero mi bot</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. Portada -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="reveal">
+          <div class="logo-slot hero-logo">
+            <!-- LOGO: reemplazá el archivo logo.png en esta misma carpeta -->
+            <img src="logo.png" alt="Logo de Nexa AI Labs" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'N'}))">
+          </div>
+          <h1>Tu negocio atiende y vende por WhatsApp <span class="grad-text">las 24 horas</span></h1>
+          <p class="lead">Creamos bots de WhatsApp con inteligencia artificial que responden a tus clientes, toman pedidos y agendan turnos por ti, de día y de noche.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" data-wa="Hola, vengo de la página de Nexa AI Labs y quiero mi bot" href="#">
+              <svg><use href="#i-wa"/></svg> Quiero mi bot
+            </a>
+            <a class="btn btn-ghost" href="#demos">Ver demos</a>
+          </div>
+          <div class="trust">
+            <span><svg><use href="#i-check"/></svg> Hecho a medida</span>
+            <span><svg><use href="#i-check"/></svg> Demo sin compromiso</span>
+            <span><svg><use href="#i-check"/></svg> Atiende como una persona</span>
+          </div>
+        </div>
+
+        <div class="phone reveal" aria-hidden="true">
+          <div class="chat-head">
+            <div class="avatar"><svg><use href="#i-bot"/></svg></div>
+            <div><b>Tu negocio</b><small>en línea</small></div>
+          </div>
+          <div class="msgs">
+            <div class="msg out">Hola, ¿tienen turno para mañana a la tarde?<span class="time">23:47</span></div>
+            <div class="msg in">¡Hola! Sí, mañana tengo disponibles las 16:00 y las 17:30. ¿Cuál te queda mejor?<span class="time">23:47</span></div>
+            <div class="msg out">A las 17:30, por favor<span class="time">23:48</span></div>
+            <div class="msg in">Listo, quedó reservado para mañana a las 17:30. Te envío un recordatorio unas horas antes.<span class="time">23:48</span></div>
+            <div class="msg in">¿Te puedo ayudar con algo más?<span class="time">23:48</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Quiénes somos -->
+    <section class="about" id="nosotros">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <span class="eyebrow">Quiénes somos</span>
+          <h2>Somos <span class="grad-text">Nexa AI Labs</span></h2>
+          <p class="lead">Un equipo de Argentina que crea bots de WhatsApp con inteligencia artificial para negocios de cualquier parte del mundo. Cada bot se hace a medida y conversa con tus clientes de forma natural, como lo haría una persona de tu equipo.</p>
+        </div>
+        <div class="about-points">
+          <div class="point reveal">
+            <div class="icon"><svg><use href="#i-globe"/></svg></div>
+            <div><b>Desde Argentina, para el mundo</b><span>Trabajamos con negocios de cualquier país, a distancia y por videollamada.</span></div>
+          </div>
+          <div class="point reveal">
+            <div class="icon"><svg><use href="#i-tool"/></svg></div>
+            <div><b>Hecho a medida</b><span>Configurado con tus productos, precios, horarios y la forma en que atiendes.</span></div>
+          </div>
+          <div class="point reveal">
+            <div class="icon"><svg><use href="#i-bot"/></svg></div>
+            <div><b>Inteligencia artificial real</b><span>Entiende lo que escriben tus clientes y responde con naturalidad, sin menús rígidos.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Beneficios -->
+    <section id="beneficios">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Beneficios</span>
+          <h2>Tu WhatsApp trabajando para ti</h2>
+          <p class="lead">Mientras te ocupas de tu negocio, tu bot se ocupa de tus clientes.</p>
+        </div>
+        <div class="cards c4">
+          <div class="card reveal">
+            <div class="icon"><svg><use href="#i-clock"/></svg></div>
+            <h3>Atiende 24/7</h3>
+            <p>Responde las 24 horas, los 7 días de la semana, incluso feriados y fuera de horario.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg><use href="#i-cart"/></svg></div>
+            <h3>No pierdes ventas ni turnos</h3>
+            <p>Cada mensaje recibe respuesta al instante, así ningún cliente se va sin comprar o reservar.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg><use href="#i-coin"/></svg></div>
+            <h3>Ahorras tiempo y dinero</h3>
+            <p>No necesitas a una persona contestando mensajes todo el día.</p>
+          </div>
+          <div class="card reveal">
+            <div class="icon"><svg><use href="#i-bell"/></svg></div>
+            <h3>Te avisa cuando vendes</h3>
+            <p>Recibes una notificación cada vez que se concreta una venta, un pedido o un turno.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Rubros -->
+    <section id="rubros">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Rubros</span>
+          <h2>Un bot pensado para tu tipo de negocio</h2>
+          <p class="lead">Elige tu rubro y prueba cómo funciona en WhatsApp.</p>
+        </div>
+        <div class="cards c3">
+          <div class="card rubro reveal">
+            <div class="icon"><svg><use href="#i-food"/></svg></div>
+            <h3>Gastronomía</h3>
+            <p>Pizzerías, hamburgueserías, rotiserías y restaurantes.</p>
+            <ul>
+              <li><svg><use href="#i-check"/></svg> Muestra el menú y toma pedidos</li>
+              <li><svg><use href="#i-check"/></svg> Pregunta por envío o retiro</li>
+              <li><svg><use href="#i-check"/></svg> Te envía el pedido listo para preparar</li>
+            </ul>
+            <a class="btn btn-wa" data-wa="DEMO pizzeria" href="#"><svg><use href="#i-wa"/></svg> Ver demo</a>
+          </div>
+          <div class="card rubro reveal">
+            <div class="icon"><svg><use href="#i-store"/></svg></div>
+            <h3>Comercio</h3>
+            <p>Tiendas de ropa, accesorios, electrónica y más.</p>
+            <ul>
+              <li><svg><use href="#i-check"/></svg> Tienda con catálogo de productos</li>
+              <li><svg><use href="#i-check"/></svg> Consulta de stock en el momento</li>
+              <li><svg><use href="#i-check"/></svg> Guía al cliente hasta la compra</li>
+            </ul>
+            <a class="btn btn-wa" data-wa="DEMO tienda" href="#"><svg><use href="#i-wa"/></svg> Ver demo</a>
+          </div>
+          <div class="card rubro reveal">
+            <div class="icon"><svg><use href="#i-cal"/></svg></div>
+            <h3>Turnos</h3>
+            <p>Barberías, centros de estética y otros servicios.</p>
+            <ul>
+              <li><svg><use href="#i-check"/></svg> Muestra horarios disponibles</li>
+              <li><svg><use href="#i-check"/></svg> Reserva, cambia y cancela turnos</li>
+              <li><svg><use href="#i-check"/></svg> Envía recordatorios a tus clientes</li>
+            </ul>
+            <a class="btn btn-wa" data-wa="DEMO turnos" href="#"><svg><use href="#i-wa"/></svg> Ver demo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Cómo funciona -->
+    <section id="como-funciona" class="about">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2>Tu bot listo en 3 pasos</h2>
+          <p class="lead">Nosotros nos encargamos de todo. Tú solo nos cuentas cómo trabajas.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal">
+            <div class="num">1</div>
+            <h3>Nos escribes</h3>
+            <p>Nos mandas un mensaje por WhatsApp y coordinamos un horario.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">2</div>
+            <h3>Conocemos tu negocio</h3>
+            <p>En una videollamada vemos cómo atiendes, qué vendes y qué necesitas.</p>
+          </div>
+          <div class="step reveal">
+            <div class="num">3</div>
+            <h3>Armamos tu bot</h3>
+            <p>Lo configuramos con tus productos, precios y horarios, y lo dejamos funcionando.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Demos -->
+    <section id="demos">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Demos</span>
+          <h2>Pruébalo ahora en WhatsApp</h2>
+          <p class="lead">Toca una demo y se abrirá un chat con el mensaje ya escrito. Solo tienes que enviarlo.</p>
+        </div>
+        <div class="demo-box reveal">
+          <div class="demo-list">
+            <a class="demo-item" data-wa="DEMO tienda" href="#">
+              <div class="icon"><svg><use href="#i-store"/></svg></div>
+              <div><b>Demo Tienda</b><small>Catálogo y stock</small></div>
+              <span class="go"><svg><use href="#i-arrow"/></svg></span>
+            </a>
+            <a class="demo-item" data-wa="DEMO pizzeria" href="#">
+              <div class="icon"><svg><use href="#i-food"/></svg></div>
+              <div><b>Demo Pizzería</b><small>Pedidos de comida</small></div>
+              <span class="go"><svg><use href="#i-arrow"/></svg></span>
+            </a>
+            <a class="demo-item" data-wa="DEMO turnos" href="#">
+              <div class="icon"><svg><use href="#i-cal"/></svg></div>
+              <div><b>Demo Turnos</b><small>Reservas y agenda</small></div>
+              <span class="go"><svg><use href="#i-arrow"/></svg></span>
+            </a>
+          </div>
+          <a class="store-link" href="https://nexa-agus.fly.dev/demo/tienda" target="_blank" rel="noopener">
+            <div class="icon"><svg><use href="#i-cart"/></svg></div>
+            <div><b>Ver la tienda de ejemplo</b><small>Así se ve el catálogo online que acompaña al bot</small></div>
+            <span class="go"><svg><use href="#i-ext"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Preguntas frecuentes -->
+    <section id="preguntas">
+      <div class="wrap">
+        <div class="center reveal">
+          <span class="eyebrow">Preguntas frecuentes</span>
+          <h2>Resolvemos tus dudas</h2>
+        </div>
+        <div class="faq">
+          <details class="reveal">
+            <summary>¿Qué es un bot con inteligencia artificial? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <p>Es un asistente que responde automáticamente los mensajes de WhatsApp de tu negocio. A diferencia de los bots con menús de opciones, entiende lo que el cliente escribe con sus propias palabras y responde de forma natural, como lo haría una persona.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Sirve para mi rubro? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <p>Muy probablemente sí. Tenemos soluciones listas para gastronomía, comercios y negocios con turnos, y adaptamos el bot a casi cualquier negocio que reciba consultas por WhatsApp. Escríbenos y lo vemos juntos.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Cuánto tarda en estar listo? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <p>Depende de cada negocio y de la cantidad de productos o servicios, pero en general tu bot queda funcionando en pocos días después de la videollamada.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Puedo cambiar precios y productos? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <p>Sí. Puedes actualizar precios, productos, stock y horarios cuando lo necesites, y el bot empieza a usar la información nueva enseguida.</p>
+          </details>
+          <details class="reveal">
+            <summary>¿Cuánto cuesta? <span class="plus"><svg><use href="#i-plus"/></svg></span></summary>
+            <p>Los planes se explican en una videollamada y se adaptan a cada negocio, según lo que necesites. Escríbenos y coordinamos una llamada sin compromiso.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="final reveal">
+          <h2>¿Quieres ver cómo funcionaría en tu negocio?</h2>
+          <p class="lead">Escríbele a Agus por WhatsApp y te mostramos una demo.</p>
+          <a class="btn btn-wa" data-wa="Hola, vengo de la página de Nexa AI Labs y quiero ver una demo" href="#">
+            <svg><use href="#i-wa"/></svg> Hablar por WhatsApp
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 8. Pie de página -->
+  <footer>
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <a href="#inicio" class="brand">
+            <span class="logo-slot"><img src="logo.png" alt="" onerror="this.replaceWith(Object.assign(document.createElement('span'),{className:'fallback',textContent:'N'}))"></span>
+            Nexa AI Labs
+          </a>
+          <p style="margin-top:10px">Bots de WhatsApp con inteligencia artificial.<br>Hecho en Argentina, para el mundo.</p>
+        </div>
+        <a class="btn btn-wa" data-wa="Hola, vengo de la página de Nexa AI Labs y quiero ver una demo" href="#">
+          <svg><use href="#i-wa"/></svg> Escríbenos
+        </a>
+        <div class="socials">
+          <!-- REDES: reemplazá el "#" por el link de cada red -->
+          <a href="#" id="link-instagram" aria-label="Instagram" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" id="link-facebook" aria-label="Facebook" target="_blank" rel="noopener"><svg><use href="#i-fb"/></svg></a>
+        </div>
+      </div>
+      <p class="copy">© <span id="year">2026</span> Nexa AI Labs. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <a class="wa-float" data-wa="Hola, vengo de la página de Nexa AI Labs y quiero ver una demo" href="#" aria-label="Escribir por WhatsApp">
+    <svg><use href="#i-wa"/></svg>
+  </a>
+
+  <script>
+    // Número de WhatsApp de Agus
+    var WA_NUMBER = "5491126127971";
+    document.querySelectorAll("[data-wa]").forEach(function (a) {
+      a.href = "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(a.dataset.wa);
+      a.target = "_blank";
+      a.rel = "noopener";
+    });
+
+    // Redes sin link: no abren nada todavía
+    document.querySelectorAll(".socials a").forEach(function (a) {
+      if (a.getAttribute("href") === "#") a.addEventListener("click", function (e) { e.preventDefault(); });
+    });
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Animación al aparecer en pantalla
+    if ("IntersectionObserver" in window) {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+      document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
+    } else {
+      document.querySelectorAll(".reveal").forEach(function (el) { el.classList.add("in"); });
+    }
+  </script>
+</body>
+</html>
